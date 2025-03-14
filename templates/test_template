@@ -1,0 +1,17 @@
+package main
+
+import "testing"
+
+func BenchmarkXxx(b *testing.B) {
+	b.ReportAllocs()
+	for b.Loop() {
+		// Please write your benchmark code here...
+	}
+}
+
+func BenchmarkXxx2(b *testing.B) {
+	b.ReportAllocs()
+	for b.Loop() {
+		// Please write your benchmark code here...
+	}
+}
