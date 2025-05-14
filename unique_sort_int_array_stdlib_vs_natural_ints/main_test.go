@@ -7,17 +7,30 @@ import (
 
 // arrayだけで実装(バリデーションでsort.Ints使用)
 func uniqueSortNaturalInts(arr []int) []int {
-	if len(arr) == 0 {
+	if len(arr) == 0 || len(arr) == 1 {
 		return arr
 	}
 
-	sort.Ints(arr)
-	if arr[0] < 0 {
-		return arr
+	// 配列をコピーしてソート
+	result := make([]int, len(arr))
+	copy(result, arr)
+	sort.Ints(result)
+
+	if result[0] < 0 {
+		return result
 	}
 
-	sorted := make([]int, len(arr)+1)
-	for _, v := range arr {
+	// 最大値を見つける
+	maxVal := 0
+	for _, v := range result {
+		if v > maxVal {
+			maxVal = v
+		}
+	}
+
+	// 最大値+1の長さのスライスを作成
+	sorted := make([]int, maxVal+1)
+	for _, v := range result {
 		sorted[v] = v
 	}
 

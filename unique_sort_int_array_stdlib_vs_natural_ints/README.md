@@ -23,11 +23,11 @@ go test -bench=. -benchmem -benchtime=10000x
 
 ```sh
 goos: darwin
-goarch: arm64
+goarch: amd64
 pkg: github.com/YuukiHayashi0510/go_study_playground/unique_sort_int_array_stdlib_vs_natural_ints
-cpu: Apple M1 Pro
-BenchmarkMyUniqueSort-10           10000              6607 ns/op           33400 B/op         13 allocs/op
-BenchmarkStdUniqueSort-10          10000            104027 ns/op           82457 B/op         21 allocs/op
+cpu: VirtualApple @ 2.50GHz
+BenchmarkMyUniqueSort-8            10000              9211 ns/op           41592 B/op         14 allocs/op
+BenchmarkStdUniqueSort-8           10000            110280 ns/op           82456 B/op         21 allocs/op
 PASS
-ok      github.com/YuukiHayashi0510/go_study_playground/unique_sort_int_array_stdlib_vs_natural_ints    1.368s
+ok      github.com/YuukiHayashi0510/go_study_playground/unique_sort_int_array_stdlib_vs_natural_ints    1.822s
 ```
